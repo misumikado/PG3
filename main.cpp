@@ -51,9 +51,12 @@ void create(CELL* head, int x) {
 }
 
 void index(CELL* head) {
+
+	printf("[");
 	while (head->next != nullptr) {
-		head = head->next;
-		printf("%d\n", head->val);
+		head = head->next;	
+		printf("%d,", head->val);
 	}
+	printf("]\n");
 	printf("-------------------------------\n");
 }
