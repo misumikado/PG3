@@ -1,55 +1,61 @@
 #include <stdio.h>
-#include <vector>
 #include <list>
-#include <iostream>
+#include <string.h>
+
 using namespace std;
 
 int main()
 {
-
-	printf(" --- 1970 --- \n");
-
-	std::list<string>lst = {
-	"oosaki","gotannda","meguro","ebisu","sibuya","harazyuku",
-	"yoyogi","sinnzyuku","sinnookubo","takadanobaba","meziro",
-	"ikebukuro","ootuka","sugamo","komagome","tabata",
-	"nippori","uguisudani","ueno","okatimati","akihabara","kannda",
-	"toukyou","yuurakutyou","sinnbasi","hamamatutyou","tamata","sinagawa"
+	list<const char*>stations =
+	{
+	 "Tokyo","Kanda","Akihabara",
+	 "Okachimachi","Ueno","Uguisudani",
+	 "Nippori","Tabata","Komagome",
+	 "Sugamo","Otsuka","Ikebukuro",
+	 "Mejiro","Takadanobaba","Shin-Okubo",
+	 "Shinjuku","Yoyogi","Harajuku",
+	 "Shibuya","Ebisu","Meguro",
+	 "Gotanda","Osaki","Shinagawa",
+	 "Tamachi","Hamamatsucho","Shimbashi",
+	 "Yurakucho"
 	};
 
-	for (auto itr = lst.begin(); itr != lst.end(); ++itr) {
-		std::cout << *itr << "\n";
+
+	printf("---1970---\n");
+	for (auto itr = stations.begin(); itr != stations.end(); itr++)
+	{
+		printf("%s\n", *itr);
 	}
 
-	printf(" --- 2019 --- \n");
-
-	for (std::list<string>::iterator itr = lst.begin(); itr != lst.end(); ++itr) {	
-		if (*itr == "nippori")
+	for (auto itr = stations.begin(); itr != stations.end(); itr++)
+	{
+		if (strcmp(*itr, "Tabata") == 0)
 		{
-			itr = lst.insert(itr, "nisinippori");
-			++itr;
+			stations.insert(itr, "Nishi-Nippori");
+			break;
 		}
 	}
 
-	for (auto itr = lst.begin(); itr != lst.end(); ++itr) {
-		std::cout << *itr << "\n";
+	printf("---2019---\n");
+	for (auto itr = stations.begin(); itr != stations.end(); itr++)
+	{
+		printf("%s\n", *itr);
 	}
 
-	printf(" --- 2022 --- \n");
-
-	for (std::list<string>::iterator itr = lst.begin(); itr != lst.end(); ++itr) {	
-		if (*itr == "sinagawa")
+	for (auto itr = stations.begin(); itr != stations.end(); itr++)
+	{
+		if (strcmp(*itr, "Tamachi") == 0)
 		{
-			itr = lst.insert(itr, "takanawage-toway");
-			++itr;
+			stations.insert(itr, "Takanawa-Geto-Way");
+			break;
 		}
 	}
 
-	for (auto itr = lst.begin(); itr != lst.end(); ++itr) {
-		std::cout << *itr << "\n";
+	printf("---2022---\n");
+	for (auto itr = stations.begin(); itr != stations.end(); itr++)
+	{
+		printf("%s\n", *itr);
 	}
 
-	system("pause");
 	return 0;
 }
-
