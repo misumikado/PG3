@@ -7,7 +7,8 @@ using namespace std;
 int main()
 {
 
-	printf("==1970==\n");
+	printf(" --- 1970 --- \n");
+
 	std::list<string>lst = {
 	"oosaki","gotannda","meguro","ebisu","sibuya","harazyuku",
 	"yoyogi","sinnzyuku","sinnookubo","takadanobaba","meziro",
@@ -20,9 +21,9 @@ int main()
 		std::cout << *itr << "\n";
 	}
 
-	printf("==2019==\n");
+	printf(" --- 2019 --- \n");
 
-	for (std::list<string>::iterator itr = lst.begin(); itr != lst.end(); ++itr) {	//西日暮里を追加
+	for (std::list<string>::iterator itr = lst.begin(); itr != lst.end(); ++itr) {	
 		if (*itr == "nippori")
 		{
 			itr = lst.insert(itr, "nisinippori");
@@ -34,9 +35,9 @@ int main()
 		std::cout << *itr << "\n";
 	}
 
-	printf("==2022==\n");
+	printf(" --- 2022 --- \n");
 
-	for (std::list<string>::iterator itr = lst.begin(); itr != lst.end(); ++itr) {	//高野輪ゲートウェイを追加
+	for (std::list<string>::iterator itr = lst.begin(); itr != lst.end(); ++itr) {	
 		if (*itr == "sinagawa")
 		{
 			itr = lst.insert(itr, "takanawage-toway");
